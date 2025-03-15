@@ -430,7 +430,7 @@
                       <p class="text-xs text-gray-500" x-text="`ID: ${item.id.substring(0, 8)}`"></p>
                     </div>
                   </div>
-                  <p class="text-sm text-gray-600 mb-4 line-clamp-2" x-text="item.description"></p>
+                  <p class="text-sm text-gray-600 mb-4 line-clamp-2" x-text="item.description || 'Tidak ada deskripsi'"></p>
                   <div class="flex justify-between items-center pt-4 border-t">
                     <button @click="editItem(index)" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium flex items-center">
                       <i class="fas fa-edit mr-1"></i> Edit
@@ -597,32 +597,6 @@
               <label for="categoryName" class="block text-sm font-medium text-gray-700 mb-1">Nama Kategori</label>
               <input type="text" id="categoryName" x-model="newCategory.name" class="border border-gray-300 rounded-lg px-3 py-2 w-full focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Masukkan nama kategori">
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <label for="categoryIcon" class="block text-sm font-medium text-gray-700 mb-1">Icon</label>
-                <select id="categoryIcon" x-model="newCategory.icon" class="border border-gray-300 rounded-lg px-3 py-2 w-full focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
-                  <option value="fa-box">📦 Box</option>
-                  <option value="fa-laptop">💻 Laptop</option>
-                  <option value="fa-tshirt">👕 T-shirt</option>
-                  <option value="fa-book">📚 Book</option>
-                  <option value="fa-mobile-alt">📱 Mobile</option>
-                  <option value="fa-utensils">🍽️ Utensils</option>
-                  <option value="fa-home">🏠 Home</option>
-                </select>
-              </div>
-              <div>
-                <label for="categoryColor" class="block text-sm font-medium text-gray-700 mb-1">Warna</label>
-                <select id="categoryColor" x-model="newCategory.color" class="border border-gray-300 rounded-lg px-3 py-2 w-full focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
-                  <option value="#4F46E5">Indigo</option>
-                  <option value="#10B981">Emerald</option>
-                  <option value="#F59E0B">Amber</option>
-                  <option value="#6366F1">Purple</option>
-                  <option value="#EC4899">Pink</option>
-                  <option value="#EF4444">Red</option>
-                  <option value="#3B82F6">Blue</option>
-                </select>
-              </div>
-            </div>
             <div>
               <label for="categoryDescription" class="block text-sm font-medium text-gray-700 mb-1">Deskripsi</label>
               <textarea id="categoryDescription" x-model="newCategory.description" rows="3" class="border border-gray-300 rounded-lg px-3 py-2 w-full focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Masukkan deskripsi kategori"></textarea>
@@ -716,5 +690,6 @@
 
     <script src="js/script.js"></script>
   
+
 
 </body></html>
